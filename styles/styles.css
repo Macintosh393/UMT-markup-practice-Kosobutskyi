@@ -1,0 +1,63 @@
+@import "./reset.css";
+
+/* Shared */
+
+/* Header */
+
+/* Hero section */
+
+/* About */
+
+/* Bestsellers */
+
+/* Catalogue */
+
+/* Feedback */
+
+/* Contacts */
+
+/* Footer */
+
+/* Mobile Menu */
+
+/* Tablet styles */
+@media screen and (min-width: 768px) {
+  /* Shared */
+
+  /* Hero section */
+
+  /* About */
+
+  /* Bestsellers */
+
+  /* Catalogue */
+
+  /* Feedback */
+
+  /* Contacts */
+
+  /* Footer */
+
+  /* Mobile Menu */
+}
+
+/* Desctop styles */
+@media screen and (min-width: 768px) {
+  /* Shared */
+
+  /* Header */
+
+  /* Hero section */
+
+  /* About */
+
+  /* Bestsellers */
+
+  /* Catalogue */
+
+  /* Feedback */
+
+  /* Contacts */
+
+  /* Footer */
+}
