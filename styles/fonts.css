@@ -1,0 +1,12 @@
+:root {
+  --small: 14px;
+  --regular: 16px;
+  --medium: 18px;
+  --large: 20px;
+  --hero-title: 36px;
+  --hero-title-desktop: 56px;
+  --heading-small: 32px;
+  --heading-small-desktop: 48px;
+  --heading: 34px;
+  --heading-desktop: 48px;
+}

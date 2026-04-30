@@ -3,279 +3,361 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Flora</title>
+    <link rel="shortcut icon" href="./icons/favicon.svg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanuman:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
     <!-- #region Header -->
-    <header>
+    <header class="header">
       <div class="container">
-        <a href="" class="logo">
-          <svg class="logo-icon">
-            <use></use>
-          </svg>
-        </a>
-        <nav>
-          <ul>
-            <li><a href="#about-us">About Us</a></li>
-            <li><a href="#bestsellers">Bestsellers</a></li>
-            <li><a href="#bouquets">Bouquets</a></li>
-            <li><a href="#feedback">Feedback</a></li>
-            <li><a href="#contacts">Contacts</a></li>
+        <nav class="navigation">
+          <a href="#" class="header-logo-link">
+            <svg width="74" height="36">
+              <use href="./icons/sprite.svg#logo"></use>
+            </svg>
+          </a>
+          <ul class="navigation-list">
+            <li><a href="#about" class="general-link navigation-list-link">About Us</a></li>
+            <li><a href="#bestsellers" class="general-link navigation-list-link">Bestsellers</a></li>
+            <li><a href="#catalogue" class="general-link navigation-list-link">Bouquets</a></li>
+            <li><a href="#feedback" class="general-link navigation-list-link">Feedback</a></li>
+            <li><a href="#contacts" class="general-link navigation-list-link">Contacts</a></li>
           </ul>
+          <button type="button" class="primary-button header-button">Explore Bouquets</button>
+          <button class="menu-button" aria-expanded="false" aria-controls="mobile-menu" data-menu-button>
+            <svg class="menu-icon" aria-label="Mobile menu toggle">
+              <use class="menu-icon__burger" href="./icons/sprite.svg#menu"></use>
+              <use class="menu-icon__close" href="./icons/sprite.svg#x"></use>
+            </svg>
+          </button>
         </nav>
-        <button type="button">Explore Bouquets</button>
       </div>
     </header>
     <!-- #endregion -->
 
     <!-- #region Main -->
     <main>
-      <div class="container">
-        <section id="hero">
-          <h1>Brighten Your Day with Our Stunning Bouquets</h1>
-          <p>
-            At Flora, we believe that every occasion deserves a beautiful
-            bouquet. Our expertly crafted arrangements are designed to bring joy
-            and elegance to your celebrations.
+      <section id="hero" class="hero-section" data-aos="fade-up">
+        <div class="container">
+          <h1 class="section-title hero-title">Brighten Your Day with Our Stunning Bouquets</h1>
+          <p class="text hero-text">
+            At Flora, we believe that every occasion deserves a beautiful bouquet. Our expertly crafted arrangements are
+            designed to bring joy and elegance to your celebrations.
           </p>
-          <button type="button">Explore Our Bestsellers</button>
-        </section>
+          <button type="button" class="primary-button hero-button">Explore Our Bestsellers</button>
+        </div>
+      </section>
 
-        <section id="about-us">
-          <div class="line-wrapper">
-            <div>
-              <svg>
-                <use></use>
-              </svg>
-              <h2>Our Passion for Floral Artistry</h2>
-              <p>
-                At Flora, we believe that every bouquet tells a story. Our team
-                meticulously crafts each arrangement, blending creativity with
-                the freshest blooms to create stunning pieces for every
-                occasion.
-              </p>
-            </div>
-            <img src="" alt="" width="600" height="428" />
+      <section id="about" class="section-wrapper about-section" data-aos="fade-left">
+        <div class="container">
+          <div class="about-description">
+            <svg width="96" height="85">
+              <use href="./icons/sprite.svg#Flower"></use>
+            </svg>
+            <h2 class="section-title about-section-title">Our Passion for Floral Artistry</h2>
+            <p class="text">
+              At Flora, we believe that every bouquet tells a story. Our team meticulously crafts each arrangement,
+              blending creativity with the freshest blooms to create stunning pieces for every occasion.
+            </p>
           </div>
-        </section>
+          <img
+            class="about-image"
+            src="./images/jpg/florist-arranging-peony-flowers.jpg"
+            srcset="./images/jpg/florist-arranging-peony-flowers@2x.jpg 2x"
+            alt="Florist arranging peony flowers"
+            width="600"
+            height="428"
+          />
+        </div>
+      </section>
 
-        <section id="bestsellers">
-          <h2>Top-Selling Bouquets</h2>
-          <ul>
-            <li>
-              <img src="" alt="" />
-              <h3>Spring Elegance</h3>
-              <p>
-                A delicate blend of peonies, tulips, and roses — perfect for
-                springtime gifting and bright smiles.
+      <section id="bestsellers" class="section-wrapper" data-aos="fade-right">
+        <div class="container">
+          <h2 class="section-title bestsellers-section-title">Top-Selling Bouquets</h2>
+          <ul class="bestsellers-list">
+            <li class="bestsellers-list-item">
+              <img
+                class="bestsellers-item-image"
+                src="./images/jpg/gift-flowers-woman-bouquet.jpg"
+                srcset="./images/jpg/gift-flowers-woman-bouquet@2x.jpg 2x"
+                alt="Gift flowers woman bouquet"
+                width="405"
+              />
+              <h3 class="bestsellers-item-title">Spring Elegance</h3>
+              <p class="bestsellers-item-text">
+                A delicate blend of peonies, tulips, and roses — perfect for springtime gifting and bright smiles.
               </p>
-              <p>$35</p>
+              <p class="bestsellers-item-price">$35</p>
             </li>
-            <li>
-              <img src="" alt="" />
-              <h3>Berry Chic</h3>
-              <p>
-                A stylish composition of roses, seasonal greenery, and vibrant
-                berries — a bold and elegant floral statement.
+            <li class="bestsellers-list-item">
+              <img
+                class="bestsellers-item-image"
+                src="./images/jpg/bridal-arrangement-wedding-flowers.jpg"
+                srcset="./images/jpg/bridal-arrangement-wedding-flowers@2x.jpg 2x"
+                alt="Bridal arrangement wedding flowers"
+                width="405"
+              />
+              <h3 class="bestsellers-item-title">Berry Chic</h3>
+              <p class="bestsellers-item-text">
+                A stylish composition of roses, seasonal greenery, and vibrant berries — a bold and elegant floral
+                statement.
               </p>
-              <p>$40</p>
+              <p class="bestsellers-item-price">$40</p>
             </li>
-            <li>
-              <img src="" alt="" />
-              <h3>Lavender Dream</h3>
-              <p>
-                A rich bouquet with lavender, lisianthus, and roses — ideal for
-                those who love deep hues and gentle fragrance.
+            <li class="bestsellers-list-item">
+              <img
+                class="bestsellers-item-image"
+                src="./images/jpg/mixed-flower-bouquet-table.jpg"
+                srcset="./images/jpg/mixed-flower-bouquet-table@2x.jpg 2x"
+                alt="Mixed flower bouquet table"
+                width="405"
+              />
+              <h3 class="bestsellers-item-title">Lavender Dream</h3>
+              <p class="bestsellers-item-text">
+                A rich bouquet with lavender, lisianthus, and roses — ideal for those who love deep hues and gentle
+                fragrance.
               </p>
-              <p>$55</p>
+              <p class="bestsellers-item-price">$55</p>
             </li>
           </ul>
-          <div class="line-wrapper">
-            <div class="slider-indicator"></div>
-            <div class="slider-buttons">
-              <button type="button" class="slider-previous">
-                <svg>
-                  <use></use>
+          <div class="bestsellers-navigation-block">
+            <ul class="bestsellers-slider-indicators">
+              <li class="bestsellers-indicator-item active"></li>
+              <li class="bestsellers-indicator-item"></li>
+              <li class="bestsellers-indicator-item"></li>
+              <li class="bestsellers-indicator-item"></li>
+              <li class="bestsellers-indicator-item"></li>
+              <li class="bestsellers-indicator-item"></li>
+            </ul>
+            <div class="bestsellers-slider-buttons">
+              <button type="button" class="pagination-button">
+                <svg class="primary-icon">
+                  <use href="./icons/sprite.svg#left-arrow-alt"></use>
                 </svg>
               </button>
-              <button type="button" class="slider-next">
-                <svg>
-                  <use></use>
+              <button type="button" class="pagination-button">
+                <svg class="primary-icon">
+                  <use href="./icons/sprite.svg#right-arrow-alt"></use>
                 </svg>
               </button>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="bouquets">
-          <div class="center-column-wrapper">
-            <h2>Bouquets</h2>
-            <p>Explore our stunning selection of fresh flower bouquets.</p>
-            <ul>
-              <li>
-                <div class="center-column-wrapper">
-                  <img src="" alt="" />
-                  <h3>Peach Meadow</h3>
-                  <p>
-                    A soft and radiant arrangement of peach and blush roses with
-                    lush greenery in a straw basket — light and natural.
-                  </p>
-                  <p>$55</p>
-                </div>
-              </li>
-              <li>
-                <div class="center-column-wrapper">
-                  <img src="" alt="" />
-                  <h3>Blush Romance</h3>
-                  <p>
-                    A premium bouquet of deep pink and ivory roses, complemented
-                    by silver eucalyptus — sophisticated and intimate.
-                  </p>
-                  <p>$34</p>
-                </div>
-              </li>
-              <li>
-                <div class="center-column-wrapper">
-                  <img src="" alt="" />
-                  <h3>Pastel Garden</h3>
-                  <p>
-                    A pastel-toned mix of spray roses and greenery in a woven
-                    basket — gentle, airy, and perfect for any occasion.
-                  </p>
-                  <p>$40</p>
-                </div>
-              </li>
-              <li>
-                <div class="center-column-wrapper">
-                  <img src="" alt="" />
-                  <h3>Tulip Charm</h3>
-                  <p>
-                    A vivid bouquet of bright tulips and roses in a lavender box
-                    — cheerful and full of charm.
-                  </p>
-                  <p>$61</p>
-                </div>
-              </li>
-              <li>
-                <div class="center-column-wrapper">
-                  <img src="" alt="" />
-                  <h3>Berry Bloom</h3>
-                  <p>
-                    A lush mix of rich pink, purple, and cream blooms with
-                    textured greens — romantic and elegant.
-                  </p>
-                  <p>$32</p>
-                </div>
-              </li>
-              <li>
-                <div class="center-column-wrapper">
-                  <img src="" alt="" />
-                  <h3>Sweet Whisper</h3>
-                  <p>
-                    A charming spring bouquet with peonies, roses, and
-                    lilac-toned accents — fresh, lively, and expressive.
-                  </p>
-                  <p>$40</p>
-                </div>
-              </li>
-              <li>
-                <div class="center-column-wrapper">
-                  <img src="" alt="" />
-                  <h3>Field Joy</h3>
-                  <p>
-                    A rustic hand-tied bouquet of sunflowers, lisianthus, and
-                    daisies — perfect for brightening the day.
-                  </p>
-                  <p>$49</p>
-                </div>
-              </li>
-              <li>
-                <div class="center-column-wrapper">
-                  <img src="" alt="" />
-                  <h3>Soft Bloom</h3>
-                  <p>
-                    A delicate bouquet of pink carnations and roses wrapped in
-                    satin paper — soft, stylish, and versatile.
-                  </p>
-                  <p>$37</p>
-                </div>
-              </li>
-            </ul>
-            <button type="button">Show More</button>
-          </div>
-        </section>
-
-        <section id="feedback">
-          <div class="center-column-wrapper">
-            <h2>What our clients says</h2>
-            <ul>
-              <li>
-                <p>
-                  "Flora made my anniversary unforgettable with their beautiful
-                  arrangement!"
-                </p>
-                <p>Emma T.</p>
-              </li>
-              <li>
-                <p>
-                  Absolutely stunning bouquet! It looked even better than the
-                  photo and arrived right on time.
-                </p>
-                <p>Daniel R.</p>
-              </li>
-              <li>
-                <p>The service was exceptional, and the flowers were fresh!</p>
-                <p>Olivia M.</p>
-              </li>
-            </ul>
-            <div class="line-wrapper">
-              <div class="slider-buttons">
-                <button type="button" class="slider-previous">
-                  <svg>
-                    <use></use>
-                  </svg>
-                </button>
-                <button type="button" class="slider-next">
-                  <svg>
-                    <use></use>
-                  </svg>
-                </button>
-              </div>
+      <section id="catalogue" class="section-wrapper" data-aos="fade-left">
+        <div class="container">
+          <div class="catalogue-header">
+            <div class="description-block">
+              <h2 class="section-title catalogue-title">Bouquets</h2>
+              <p class="text">Explore our stunning selection of fresh flower bouquets.</p>
             </div>
           </div>
-        </section>
-
-        <section id="contacts">
-          <div class="line-wrapper">
-            <div>
-              <p>Connect</p>
-              <h2>Get in Touch</h2>
-              <p>
-                We’re here to assist you with all your floral needs and
-                inquiries.
+          <ul class="catalogue-list">
+            <li class="catalogue-list-item">
+              <img
+                class="catalogue-item-image"
+                src="./images/jpg/side-view-rose-bouquet.jpg"
+                srcset="./images/jpg/side-view-rose-bouquet@2x.jpg 2x"
+                alt="Side view rose bouquet"
+                width="296"
+              />
+              <h3 class="catalogue-item-title">Peach Meadow</h3>
+              <p class="catalogue-item-text">
+                A soft and radiant arrangement of peach and blush roses with lush greenery in a straw basket — light and
+                natural.
               </p>
-            </div>
+              <p class="catalogue-item-price">$55</p>
+            </li>
+            <li class="catalogue-list-item">
+              <img
+                class="catalogue-item-image"
+                src="./images/jpg/florist-makes-beautiful-bouquet.jpg"
+                srcset="./images/jpg/florist-makes-beautiful-bouquet@2x.jpg 2x"
+                alt="Florist makes beautiful bouquet"
+                width="296"
+              />
+              <h3 class="catalogue-item-title">Blush Romance</h3>
+              <p class="catalogue-item-text">
+                A premium bouquet of deep pink and ivory roses, complemented by silver eucalyptus — sophisticated and
+                intimate.
+              </p>
+              <p class="catalogue-item-price">$34</p>
+            </li>
+            <li class="catalogue-list-item">
+              <img
+                class="catalogue-item-image"
+                src="./images/jpg/basket-mixed-flowers-table.jpg"
+                srcset="./images/jpg/basket-mixed-flowers-table@2x.jpg 2x"
+                alt="Basket mixed flowers table"
+                width="296"
+              />
+              <h3 class="catalogue-item-title">Pastel Garden</h3>
+              <p class="catalogue-item-text">
+                A pastel-toned mix of spray roses and greenery in a woven basket — gentle, airy, and perfect for any
+                occasion.
+              </p>
+              <p class="catalogue-item-price">$40</p>
+            </li>
+            <li class="catalogue-list-item">
+              <img
+                class="catalogue-item-image"
+                src="./images/jpg/mixed-flower-composition-side.jpg"
+                srcset="./images/jpg/mixed-flower-composition-side@2x.jpg 2x"
+                alt="Mixed flower composition side"
+                width="296"
+              />
+              <h3 class="catalogue-item-title">Tulip Charm</h3>
+              <p class="catalogue-item-text">
+                A vivid bouquet of bright tulips and roses in a lavender box — cheerful and full of charm.
+              </p>
+              <p class="catalogue-item-price">$61</p>
+            </li>
+            <li class="catalogue-list-item">
+              <img
+                class="catalogue-item-image"
+                src="./images/jpg/exotic-rustic-bunch-flowers.jpg"
+                srcset="./images/jpg/exotic-rustic-bunch-flowers@2x.jpg 2x"
+                alt="Exotic rustic bunch of flowers"
+                width="296"
+              />
+              <h3 class="catalogue-item-title">Berry Bloom</h3>
+              <p class="catalogue-item-text">
+                A lush mix of rich pink, purple, and cream blooms with textured greens — romantic and elegant.
+              </p>
+              <p class="catalogue-item-price">$32</p>
+            </li>
+            <li class="catalogue-list-item">
+              <img
+                class="catalogue-item-image"
+                src="./images/jpg/basket-colorful-flowers-notecard.jpg"
+                srcset="./images/jpg/basket-colorful-flowers-notecard@2x.jpg 2x"
+                alt="Basket colorful flower notecard"
+                width="296"
+              />
+              <h3 class="catalogue-item-title">Sweet Whisper</h3>
+              <p class="catalogue-item-text">
+                A charming spring bouquet with peonies, roses, and lilac-toned accents — fresh, lively, and expressive.
+              </p>
+              <p class="catalogue-item-price">$40</p>
+            </li>
+            <li class="catalogue-list-item">
+              <img
+                class="catalogue-item-image"
+                src="./images/jpg/wild-flowers.jpg"
+                srcset="./images/jpg/wild-flowers@2x.jpg 2x"
+                alt="Wild flowers"
+                width="296"
+              />
+              <h3 class="catalogue-item-title">Field Joy</h3>
+              <p class="catalogue-item-text">
+                A rustic hand-tied bouquet of sunflowers, lisianthus, and daisies — perfect for brightening the day.
+              </p>
+              <p class="catalogue-item-price">$49</p>
+            </li>
+            <li class="catalogue-list-item">
+              <img
+                class="catalogue-item-image"
+                src="./images/jpg/bouquet-vintage-dark-background.jpg"
+                srcset="./images/jpg/bouquet-vintage-dark-background@2x.jpg 2x"
+                alt="Bouquet vintage dark background"
+                width="296"
+              />
+              <h3 class="catalogue-item-title">Soft Bloom</h3>
+              <p class="catalogue-item-text">
+                A delicate bouquet of pink carnations and roses wrapped in satin paper — soft, stylish, and versatile.
+              </p>
+              <p class="catalogue-item-price">$37</p>
+            </li>
+          </ul>
+          <button type="button" class="primary-button catalogue-item-show-more-button">Show More</button>
+        </div>
+      </section>
+
+      <section id="feedback" class="section-wrapper" data-aos="fade-right">
+        <div class="container">
+          <h2 class="section-title feedback-section-title">What our clients says</h2>
+          <ul class="feedback-list">
+            <li class="feedback-item">
+              <p class="text feedback-text">
+                "Flora made my anniversary unforgettable with their beautiful arrangement!"
+              </p>
+              <p class="feedback-person-name">Emma T.</p>
+            </li>
+            <li class="feedback-item">
+              <p class="text feedback-text">
+                "Absolutely stunning bouquet! It looked even better than the photo and arrived right on time."
+              </p>
+              <p class="feedback-person-name">Daniel R.</p>
+            </li>
+            <li class="feedback-item">
+              <p class="text feedback-text">"The service was exceptional, and the flowers were fresh!"</p>
+              <p class="feedback-person-name">Olivia M.</p>
+            </li>
+          </ul>
+          <div class="feedback-navigation-block">
+            <button type="button" class="feedback-pagination-button">
+              <svg class="primary-icon">
+                <use href="./icons/sprite.svg#left-arrow-alt"></use>
+              </svg>
+            </button>
+            <button type="button" class="feedback-pagination-button">
+              <svg class="primary-icon">
+                <use href="./icons/sprite.svg#right-arrow-alt"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacts" class="section-wrapper contacts-section" data-aos="fade-left">
+        <div class="container">
+          <div class="contacts-wrapper">
             <div>
-              <div class="phone-contact">
+              <p class="contacts-tag">Connect</p>
+              <h2 class="contacts-title">Get in Touch</h2>
+              <p class="contacts-description">We’re here to assist you with all your floral needs and inquiries.</p>
+            </div>
+            <ul class="contacts-list">
+              <li class="contact-item">
                 <div class="line-wrapper">
-                  <svg>
-                    <use></use>
+                  <svg class="primary-icon">
+                    <use href="./icons/sprite.svg#phone"></use>
                   </svg>
                   <div>
-                    <p>Phone</p>
-                    <a href="tel:+1(555)123-4567">+1 (555) 123-4567</a>
+                    <p class="contact-text">Phone</p>
+                    <a class="contact-value contact-value__underline general-link" href="tel:+1(555)123-4567"
+                      >+1 (555) 123-4567</a
+                    >
                   </div>
                 </div>
-              </div>
-              <div class="adress-data">
+              </li>
+              <li class="contact-item">
                 <div class="line-wrapper">
-                  <svg>
-                    <use></use>
+                  <svg class="primary-icon">
+                    <use href="./icons/sprite.svg#map"></use>
                   </svg>
                   <div>
-                    <p>Store</p>
+                    <p class="contact-text">Store</p>
                     <address>
                       <a
+                        class="contact-value general-link"
                         target="_blank"
                         href="https://maps.app.goo.gl/iTF1LhDi1xCS3JTy7"
                         >456 Floral Ave, Sydney NSW 2000 AU</a
@@ -283,54 +365,85 @@
                     </address>
                   </div>
                 </div>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
-          <img src="" alt="" width="1280" height="720" />
-        </section>
-      </div>
+          <img
+            class="contacts-image"
+            src="./images/jpg/florist-holding-beautiful-flowers.jpg"
+            srcset="./images/jpg/florist-holding-beautiful-flowers@2x.jpg 2x"
+            alt="Florist holding beautiful flowers"
+            width="1280"
+            height="720"
+          />
+        </div>
+      </section>
     </main>
     <!-- #endregion -->
 
     <!-- #region Footer -->
-    <footer>
+    <footer class="footer-section" data-aos="fade-up">
       <div class="container">
-        <div class="line-wrapper">
-          <a href="" class="footer-logo">
-            <svg class="logo-icon">
-              <use></use>
+        <div class="footer-actions">
+          <a href="#" class="footer-logo">
+            <svg width="259" height="125">
+              <use href="./icons/sprite.svg#logo"></use>
             </svg>
           </a>
-          <ul>
-            <li><a href="#about-us">About Us</a></li>
-            <li><a href="#bestsellers">Bestsellers</a></li>
-            <li><a href="#bouquets">Bouquets</a></li>
-            <li><a href="#feedback">Feedback</a></li>
-            <li><a href="#contacts">Contacts</a></li>
+          <ul class="navigation-list footer-navigation-list">
+            <li><a class="general-link footer-navigation-link" href="#about">About Us</a></li>
+            <li><a class="general-link footer-navigation-link" href="#bestsellers">Bestsellers</a></li>
+            <li><a class="general-link footer-navigation-link" href="#catalogue">Bouquets</a></li>
+            <li><a class="general-link footer-navigation-link" href="#feedback">Feedback</a></li>
+            <li><a class="general-link footer-navigation-link" href="#contacts">Contacts</a></li>
           </ul>
-          <ul>
+          <ul class="footer-socials">
             <li>
-              <svg>
-                <use></use>
-              </svg>
+              <a href="https://www.facebook.com/">
+                <svg class="primary-icon icon-socials">
+                  <use href="./icons/sprite.svg#Facebook"></use>
+                </svg>
+              </a>
             </li>
             <li>
-              <svg>
-                <use></use>
-              </svg>
+              <a href="https://www.instagram.com/">
+                <svg class="primary-icon icon-socials">
+                  <use href="./icons/sprite.svg#Instagram"></use>
+                </svg>
+              </a>
             </li>
             <li>
-              <svg>
-                <use></use>
-              </svg>
+              <a href="https://x.com/">
+                <svg class="primary-icon icon-socials">
+                  <use href="./icons/sprite.svg#X-social"></use>
+                </svg>
+              </a>
             </li>
           </ul>
         </div>
       </div>
-      <div>
-        <p>&copy; 2025 Flora. All rights reserved.</p>
-      </div>
+      <p class="footer-caption">&copy; 2025 Flora. All rights reserved.</p>
     </footer>
     <!-- #endregion -->
+
+    <div class="mobile-menu" id="mobile-menu" aria-labelledby="Mobile menu toggle" data-menu>
+      <div class="container">
+        <nav class="menu-navigation">
+          <ul class="menu-navigation-list">
+            <li><a href="#about" class="general-link menu-navigation-link">About Us</a></li>
+            <li><a href="#bestsellers" class="general-link menu-navigation-link">Bestsellers</a></li>
+            <li><a href="#catalogue" class="general-link menu-navigation-link">Bouquets</a></li>
+            <li><a href="#feedback" class="general-link menu-navigation-link">Feedback</a></li>
+            <li><a href="#contacts" class="general-link menu-navigation-link">Contacts</a></li>
+          </ul>
+        </nav>
+        <button type="button" class="primary-button menu-explore-button">Explore Bouquets</button>
+      </div>
+    </div>
+    <script src="./js/mobile-menu.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
