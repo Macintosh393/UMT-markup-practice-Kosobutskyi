@@ -4,6 +4,10 @@
 
 /* Shared */
 
+html {
+  scroll-behavior: smooth;
+}
+
 html:has(body.menu-open) {
   overflow-x: hidden;
 }
