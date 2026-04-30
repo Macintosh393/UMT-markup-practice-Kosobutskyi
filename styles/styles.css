@@ -5,7 +5,7 @@
 /* Shared */
 
 html:has(body.menu-open) {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 body {
