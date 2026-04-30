@@ -7,7 +7,10 @@
     <link rel="shortcut icon" href="./icons/favicon.svg" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@100..900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanuman:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
@@ -50,7 +53,7 @@
     <main>
       <section id="hero" class="hero-section">
         <div class="container">
-          <h1 class="hero-title">Brighten Your Day with Our Stunning Bouquets</h1>
+          <h1 class="section-title hero-title">Brighten Your Day with Our Stunning Bouquets</h1>
           <p class="text hero-text">
             At Flora, we believe that every occasion deserves a beautiful bouquet. Our expertly crafted arrangements are
             designed to bring joy and elegance to your celebrations.
@@ -61,26 +64,24 @@
 
       <section id="about" class="section-wrapper about-section">
         <div class="container">
-          <div class="line-wrapper">
-            <div class="about-description">
-              <svg>
-                <use href="./icons/sprite.svg#Flover"></use>
-              </svg>
-              <h2 class="section-title about-section-title">Our Passion for Floral Artistry</h2>
-              <p class="text">
-                At Flora, we believe that every bouquet tells a story. Our team meticulously crafts each arrangement,
-                blending creativity with the freshest blooms to create stunning pieces for every occasion.
-              </p>
-            </div>
-            <img
-              class="about-image"
-              src="./images/jpg/florist-arranging-peony-flowers.jpg"
-              srcset="./images/jpg/florist-arranging-peony-flowers@2x.jpg 2x"
-              alt="Florist arranging peony flowers"
-              width="600"
-              height="428"
-            />
+          <div class="about-description">
+            <svg width="96" height="85">
+              <use href="./icons/sprite.svg#Flower"></use>
+            </svg>
+            <h2 class="section-title about-section-title">Our Passion for Floral Artistry</h2>
+            <p class="text">
+              At Flora, we believe that every bouquet tells a story. Our team meticulously crafts each arrangement,
+              blending creativity with the freshest blooms to create stunning pieces for every occasion.
+            </p>
           </div>
+          <img
+            class="about-image"
+            src="./images/jpg/florist-arranging-peony-flowers.jpg"
+            srcset="./images/jpg/florist-arranging-peony-flowers@2x.jpg 2x"
+            alt="Florist arranging peony flowers"
+            width="600"
+            height="428"
+          />
         </div>
       </section>
 
@@ -135,21 +136,21 @@
           </ul>
           <div class="bestsellers-navigation-block">
             <ul class="bestsellers-slider-indicators">
-              <li class="bestseller-indicator-item active"></li>
-              <li class="bestseller-indicator-item"></li>
-              <li class="bestseller-indicator-item"></li>
-              <li class="bestseller-indicator-item"></li>
-              <li class="bestseller-indicator-item"></li>
-              <li class="bestseller-indicator-item"></li>
+              <li class="bestsellers-indicator-item active"></li>
+              <li class="bestsellers-indicator-item"></li>
+              <li class="bestsellers-indicator-item"></li>
+              <li class="bestsellers-indicator-item"></li>
+              <li class="bestsellers-indicator-item"></li>
+              <li class="bestsellers-indicator-item"></li>
             </ul>
-            <div class="slider-buttons">
-              <button type="button" class="bestsellers-pagination-button">
-                <svg>
+            <div class="bestsellers-slider-buttons">
+              <button type="button" class="pagination-button">
+                <svg class="primary-icon">
                   <use href="./icons/sprite.svg#left-arrow-alt"></use>
                 </svg>
               </button>
-              <button type="button" class="bestsellers-pagination-button">
-                <svg>
+              <button type="button" class="pagination-button">
+                <svg class="primary-icon">
                   <use href="./icons/sprite.svg#right-arrow-alt"></use>
                 </svg>
               </button>
@@ -323,18 +324,18 @@
         </div>
       </section>
 
-      <section id="contacts" class="section-wrapper">
+      <section id="contacts" class="section-wrapper contacts-section">
         <div class="container">
-          <div class="line-wrapper">
+          <div class="contacts-wrapper">
             <div>
-              <p>Connect</p>
-              <h2>Get in Touch</h2>
-              <p>We’re here to assist you with all your floral needs and inquiries.</p>
+              <p class="contacts-tag">Connect</p>
+              <h2 class="contacts-title">Get in Touch</h2>
+              <p class="contacts-description">We’re here to assist you with all your floral needs and inquiries.</p>
             </div>
             <ul class="contacts-list">
               <li class="contact-item">
                 <div class="line-wrapper">
-                  <svg class="primary-icon icon-medium">
+                  <svg class="primary-icon">
                     <use href="./icons/sprite.svg#phone"></use>
                   </svg>
                   <div>
@@ -347,7 +348,7 @@
               </li>
               <li class="contact-item">
                 <div class="line-wrapper">
-                  <svg class="primary-icon icon-medium">
+                  <svg class="primary-icon">
                     <use href="./icons/sprite.svg#map"></use>
                   </svg>
                   <div>
@@ -397,21 +398,21 @@
           <ul class="footer-socials">
             <li>
               <a href="https://www.facebook.com/">
-                <svg class="primary-icon">
+                <svg class="primary-icon icon-socials">
                   <use href="./icons/sprite.svg#Facebook"></use>
                 </svg>
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/">
-                <svg class="primary-icon">
+                <svg class="primary-icon icon-socials">
                   <use href="./icons/sprite.svg#Instagram"></use>
                 </svg>
               </a>
             </li>
             <li>
               <a href="https://x.com/">
-                <svg class="primary-icon">
+                <svg class="primary-icon icon-socials">
                   <use href="./icons/sprite.svg#X-social"></use>
                 </svg>
               </a>
@@ -424,15 +425,19 @@
     <!-- #endregion -->
 
     <div class="mobile-menu" id="mobile-menu" aria-labelledby="Mobile menu toggle" data-menu>
-      <nav class="menu-navigation">
-        <ul class="menu-navigation-list">
-          <li><a href="#about" class="general-link menu-navigation-link">About Us</a></li>
-          <li><a href="#bestsellers" class="general-link menu-navigation-link">Bestsellers</a></li>
-          <li><a href="#catalogue" class="general-link menu-navigation-link">Bouquets</a></li>
-          <li><a href="#feedback" class="general-link menu-navigation-link">Feedback</a></li>
-          <li><a href="#contacts" class="general-link menu-navigation-link">Contacts</a></li>
-        </ul>
-      </nav>
+      <div class="container">
+        <nav class="menu-navigation">
+          <ul class="menu-navigation-list">
+            <li><a href="#about" class="general-link menu-navigation-link">About Us</a></li>
+            <li><a href="#bestsellers" class="general-link menu-navigation-link">Bestsellers</a></li>
+            <li><a href="#catalogue" class="general-link menu-navigation-link">Bouquets</a></li>
+            <li><a href="#feedback" class="general-link menu-navigation-link">Feedback</a></li>
+            <li><a href="#contacts" class="general-link menu-navigation-link">Contacts</a></li>
+          </ul>
+        </nav>
+        <button type="button" class="primary-button menu-explore-button">Explore Bouquets</button>
+      </div>
     </div>
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>

@@ -3,13 +3,16 @@
   --primary-text: #030c01;
 
   /* Button */
-  --primary-button-bg: linear-gradient(-65deg, #e8e81c, #42ed13);
+  --primary-button-bg: linear-gradient(115deg, #e8e81c, #42ed13);
   --secondary-button-bg: #fff;
   --secondary-button-border-color: #030c0126;
   --pagination-button-border-color: #030c0126;
   --pagination-button-bg: #fff;
-  --button-clicked-bd: #4e544d;
+  --pagination-button-hover-bg: #d9fbcf;
+  --pagination-button-clicked-bg: #7af259;
+  --button-clicked-bg: #4e544d;
   --button-clicked-text: #fff;
 
-  --footer-border: #ffffff26;
+  --footer-bg: #eeee60;
+  --footer-border: #030c0126;
 }
