@@ -25,16 +25,6 @@ a {
   outline: none;
 }
 
-select {
-  color: inherit;
-  background-color: transparent;
-}
-
-select,
-::picker(select) {
-  appearance: base-select;
-}
-
 button {
   cursor: pointer;
   border: none;
