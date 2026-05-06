@@ -1,6 +1,6 @@
 const catalogueList = document.getElementById("catalogue-list");
 const detailModal = document.getElementById("detail-modal");
-const closeDetailButtons = document.querySelectorAll("#close-detail-modal-button");
+const closeDetailButton = document.getElementById("close-detail-modal-button");
 const detailModalContent = document.getElementById("detail-modal-content");
 
 const orderModal = document.getElementById("order-modal");
@@ -72,10 +72,8 @@ catalogueList.addEventListener("click", (e) => {
   }
 });
 
-closeDetailButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    closeDetailModal();
-  });
+closeDetailButton.addEventListener("click", () => {
+  closeDetailModal();
 });
 
 detailModal.addEventListener("click", (e) => {
