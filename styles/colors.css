@@ -13,6 +13,10 @@
   --button-clicked-bg: #4e544d;
   --button-clicked-text: #fff;
 
+  --input-border-color: #030c0126;
+
   --footer-bg: #eeee60;
   --footer-border: #030c0126;
+
+  --modal-bg: #00000040;
 }

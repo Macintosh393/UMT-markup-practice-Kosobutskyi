@@ -216,7 +216,7 @@
               <p class="text">Explore our stunning selection of fresh flower bouquets.</p>
             </div>
           </div>
-          <ul class="catalogue-list">
+          <ul class="catalogue-list" id="catalogue-list">
             <li class="catalogue-list-item">
               <picture
                 ><source
@@ -571,7 +571,72 @@
         <button type="button" class="primary-button menu-explore-button">Explore Bouquets</button>
       </div>
     </div>
+    <div class="modal-background" id="detail-modal">
+      <div class="modal-container detail-modal-container">
+        <button type="button" class="close-modal-button" id="close-detail-modal-button">
+          <svg>
+            <use href="./icons/sprite.svg#x"></use>
+          </svg>
+        </button>
+        <div class="detail-modal-content-wrapper modal-content-wrapper">
+          <div class="detail-modal-content" id="detail-modal-content"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-background" id="order-modal">
+      <div class="modal-container order-modal-container">
+        <button type="button" class="close-modal-button" id="close-order-modal-button">
+          <svg>
+            <use href="./icons/sprite.svg#x"></use>
+          </svg>
+        </button>
+        <div class="order-modal-content-wrapper modal-content-wrapper">
+          <form action="" class="order-modal-form" id="order-modal-form">
+            <h2 class="order-modal-title">Order</h2>
+            <div class="order-modal-form-content">
+              <div class="input-block">
+                <label class="order-form-label" for="name">Name*</label>
+                <input class="order-form-input" type="text" name="name" id="name" placeholder="Ann" required />
+              </div>
+              <div class="input-block">
+                <label class="order-form-label" for="phone">Phone*</label>
+                <input
+                  class="order-form-input"
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  placeholder="+1 (555) 123-4567"
+                  required
+                />
+              </div>
+              <div class="input-block">
+                <label class="order-form-label" for="address">Address</label>
+                <input
+                  class="order-form-input"
+                  type="text"
+                  name="address"
+                  id="address"
+                  placeholder="456 Floral Ave, Sydney NSW 2000 AU"
+                />
+              </div>
+              <div class="input-block">
+                <label class="order-form-label" for="name">Message</label>
+                <textarea
+                  class="order-form-input"
+                  name="comment"
+                  id="comment"
+                  placeholder="Type your message..."
+                  rows="5"
+                ></textarea>
+              </div>
+            </div>
+            <button type="submit" class="primary-button">Go to Checkout</button>
+          </form>
+        </div>
+      </div>
+    </div>
     <script src="./js/mobile-menu.js"></script>
+    <script src="./js/modal.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({ once: true });
