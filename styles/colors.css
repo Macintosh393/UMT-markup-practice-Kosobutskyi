@@ -21,4 +21,10 @@
   --footer-border: #030c0126;
 
   --modal-bg: #00000040;
+
+  --notification-bg: #ffffff;
+  --notification-border-color: #030c0126;
+  --notification-error-border-color: #d13e3e;
+
+  --loader-spiner-color: linear-gradient(115deg, #e8e81c, #42ed13);
 }
