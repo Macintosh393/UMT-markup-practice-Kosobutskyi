@@ -5,75 +5,110 @@ const detailModalContent = document.getElementById("detail-modal-content");
 
 const orderModal = document.getElementById("order-modal");
 const closeOrderButton = document.getElementById("close-order-modal-button");
+const orderModalForm = document.getElementById("order-modal-form");
 
-function toggleDetailModal() {
-  detailModal.classList.toggle("is-open");
-  document.body.classList.toggle("modal-open");
+function syncModalOpenState() {
+  const anyModalOpen = detailModal.classList.contains("is-open") || orderModal.classList.contains("is-open");
+
+  document.body.classList.toggle("modal-open", anyModalOpen);
+  document.documentElement.classList.toggle("modal-open", anyModalOpen);
+}
+
+function isOverlayScrollLockActive() {
+  const html = document.documentElement;
+  return html.classList.contains("modal-open") || html.classList.contains("menu-open");
+}
+
+function trapScrollBehindOverlays(event) {
+  if (!isOverlayScrollLockActive()) {
+    return;
+  }
+  if (event.target.closest(".modal-container") || event.target.closest("[data-menu]")) {
+    return;
+  }
+  event.preventDefault();
+}
+
+document.addEventListener("touchmove", trapScrollBehindOverlays, { passive: false });
+document.addEventListener("wheel", trapScrollBehindOverlays, { passive: false });
+
+function openDetailModal() {
+  detailModal.classList.add("is-open");
+  syncModalOpenState();
+}
+
+function openOrderModal() {
+  orderModal.classList.add("is-open");
+  syncModalOpenState();
+  orderModalForm.reset();
 }
 
 function closeDetailModal() {
   detailModal.classList.remove("is-open");
-  document.body.classList.remove("modal-open");
-}
-
-function toggleOrderModal() {
-  orderModal.classList.toggle("is-open");
-  document.body.classList.toggle("modal-open");
+  syncModalOpenState();
 }
 
 function closeOrderModal() {
   orderModal.classList.remove("is-open");
-  document.body.classList.remove("modal-open");
+  syncModalOpenState();
 }
 
-catalogueList.addEventListener("click", (e) => {
-  const item = e.target.closest(".catalogue-list-item");
-  if (item) {
-    const title = item.querySelector(".catalogue-item-title").textContent;
-    const price = item.querySelector(".catalogue-item-price").textContent;
-    const text = item.querySelector(".catalogue-item-text").textContent;
+function buildDetailModalMarkup() {
+  const markup = `
+    <img class="detail-modal-image" alt="">
+    <div class="detail-modal-texts-block">
+      <h3 class="detail-modal-title"></h3>
+      <p class="detail-modal-price"></p>
+      <p class="detail-modal-text"></p>
+      <div class="detail-modal-actions">
+        <button type="button" id="detail-modal-cta" class="primary-button detail-modal-button">Buy now</button>
+        <input type="number" class="detail-order-count" value="1" min="1">
+      </div>
+    </div>`;
 
-    const imgElement = item.querySelector(".catalogue-item-image");
-    const src = imgElement.getAttribute("src");
-    const srcset = imgElement.getAttribute("srcset");
+  return markup;
+}
 
-    const markup = `
-            <img
-              class="detail-modal-image"
-              src="${src}"
-              srcset="${srcset}"
-              alt="${title}"
-            />
-            <div class="detail-modal-texts-block">
-              <h3 class="detail-modal-title">${title}</h3>
-              <p class="detail-modal-price">${price}</p>
-              <p class="detail-modal-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum corrupti laboriosam nulla, repellat
-                labore ipsam eveniet, enim non officia iusto esse vel sit accusamus alias fugiat amet fugit, maxime
-                iste. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, inventore quisquam? Earum,
-                numquam aliquam eaque consequatur corrupti facere, nulla eum culpa sequi doloribus quibusdam quasi
-                laboriosam provident dignissimos molestias fugiat.
-              </p>
-              <div class="detail-modal-actions">
-                <button type="button" class="primary-button detail-modal-button" id="detail-modal-button">Buy now</button>
-                <input type="number" class="detail-order-count" value="1" min="1">
-              </div>
-            </div>`;
+function openDetailModalFromCatalogueItem(parentItem) {
+  const imgElement = parentItem.querySelector(".catalogue-item-image");
+  const src = imgElement.getAttribute("src");
+  const rawSrcset = imgElement.getAttribute("srcset");
+  const title = parentItem.querySelector(".catalogue-item-title").textContent;
+  const descriptionFromCard = parentItem.querySelector(".catalogue-item-text").textContent;
+  const price = parentItem.querySelector(".catalogue-item-price").textContent;
 
-    detailModalContent.innerHTML = "";
-    detailModalContent.insertAdjacentHTML("afterbegin", markup);
+  detailModalContent.replaceChildren();
+  detailModalContent.insertAdjacentHTML("beforeend", buildDetailModalMarkup());
 
-    detailModalContent.querySelector("#detail-modal-button").addEventListener("click", () => {
-      closeDetailModal();
-      toggleOrderModal();
-    });
-
-    toggleDetailModal();
+  const detailImage = detailModalContent.querySelector(".detail-modal-image");
+  detailImage.src = src;
+  if (rawSrcset) {
+    detailImage.setAttribute("srcset", rawSrcset);
   }
+  detailImage.alt = title;
+
+  detailModalContent.querySelector(".detail-modal-title").textContent = title;
+  detailModalContent.querySelector(".detail-modal-text").textContent = descriptionFromCard;
+  detailModalContent.querySelector(".detail-modal-price").textContent = price;
+
+  openDetailModal();
+}
+
+catalogueList?.addEventListener("click", (event) => {
+  const parentItem = event.target.closest(".catalogue-list-item");
+  if (!parentItem) {
+    return;
+  }
+
+  openDetailModalFromCatalogueItem(parentItem);
 });
 
 closeDetailButton.addEventListener("click", () => {
   closeDetailModal();
+});
+
+closeOrderButton.addEventListener("click", () => {
+  closeOrderModal();
 });
 
 detailModal.addEventListener("click", (e) => {
@@ -82,12 +117,15 @@ detailModal.addEventListener("click", (e) => {
   }
 });
 
-closeOrderButton.addEventListener("click", () => {
-  closeOrderModal();
-});
-
 orderModal.addEventListener("click", (e) => {
   if (e.target === e.currentTarget) {
     closeOrderModal();
+  }
+});
+
+detailModalContent.addEventListener("click", (e) => {
+  if (e.target.id === "detail-modal-cta" || e.target.closest("#detail-modal-cta")) {
+    closeDetailModal();
+    openOrderModal();
   }
 });

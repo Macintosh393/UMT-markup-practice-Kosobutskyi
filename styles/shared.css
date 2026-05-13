@@ -4,14 +4,16 @@ html {
   scroll-behavior: smooth;
 }
 
-/* html:has(body.menu-open) {
+html.modal-open,
+html.menu-open {
   overflow: hidden;
-} */
+  overscroll-behavior: none;
+}
 
 body.modal-open,
 body.menu-open {
-  height: 100vh;
   overflow: hidden;
+  overscroll-behavior: none;
 }
 
 img {

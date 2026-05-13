@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
+    "preview:pages": "GITHUB_ACTIONS=true GITHUB_REPOSITORY=Macintosh393/UMT-markup-practice-Kosobutskyi VITE_API_MODE=static sh -c 'vite build && vite preview'",
     "build": "vite build",
-    "api": "json-server db/db.json --port 3001"
+    "api": "json-server db.json --port 3001"
   },
   "repository": {
     "type": "git",
