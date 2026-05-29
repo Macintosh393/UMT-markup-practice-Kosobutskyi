@@ -89,11 +89,13 @@ function renderCatalogueChunk(products, shouldReplaceList) {
 
 function normalizeJsonServerProductPage(responseBody, requestedPage) {
   if (Array.isArray(responseBody)) {
+    const startIndex = (requestedPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
     return {
-      products: responseBody,
+      products: responseBody.slice(startIndex, endIndex),
       meta: {
         page: requestedPage,
-        totalPages: 1,
+        totalPages: Math.ceil(responseBody.length / itemsPerPage),
         total: responseBody.length,
       },
     };
@@ -133,7 +135,7 @@ async function fetchCataloguePage(page, options) {
 
     const response = await apiClient.get("/products", { params: requestParams });
 
-    const { products, meta } = normalizeJsonServerProductPage(response.data, 1);
+    const { products, meta } = normalizeJsonServerProductPage(response.data, page);
 
     renderCatalogueChunk(products, !appendItems);
     lastLoadedPage = page;
