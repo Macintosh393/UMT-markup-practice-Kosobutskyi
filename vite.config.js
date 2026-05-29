@@ -5,8 +5,7 @@ import { resolve } from "node:path";
 const repo = process.env.GITHUB_REPOSITORY?.split("/")[1];
 const isGitHubActions = process.env.GITHUB_ACTIONS === "true";
 const isUserOrOrgSite = Boolean(repo?.endsWith(".github.io"));
-const base =
-  isGitHubActions && repo && !isUserOrOrgSite ? `/${repo}/` : "/";
+const base = isGitHubActions && repo && !isUserOrOrgSite ? `/${repo}/` : "/";
 
 const jsonServerTarget = "http://127.0.0.1:3001";
 // In static mode the catalogue reads pre-built dist/api/*.json files. Proxying
@@ -15,8 +14,7 @@ const jsonServerTarget = "http://127.0.0.1:3001";
 const isStaticApiMode = process.env.VITE_API_MODE === "static";
 
 function stripApiPrefix(prefix) {
-  return (path) =>
-    path.startsWith(prefix) ? path.slice(prefix.length) || "/" : path;
+  return (path) => (path.startsWith(prefix) ? path.slice(prefix.length) || "/" : path);
 }
 
 const previewProxy = {};

@@ -36,12 +36,6 @@
       "category": "standart"
     },
     {
-      "img": "https://ftp.goit.study/img/flowers/68498236a1003120791.png",
-      "title": "A vibrant cascade of fuchsia orchids, peonies, and wild clematis entwined with lush, leafy vines. This bouquet evokes the untamed beauty and intrigue of a secret garden getaway.",
-      "price": "40",
-      "category": "standart"
-    },
-    {
       "img": "https://ftp.goit.study/img/flowers/68498236a1003120792.png",
       "title": "Luminous Chartreuse",
       "desc": "Brilliant chartreuse cymbidium orchids and gossamer hydrangea shine boldly among a sea of deep purple anemones and midnight lisianthus. An electrifying bouquet full of energy and aristocratic allure.",
@@ -637,13 +631,6 @@
       "category": "standart"
     },
     {
-      "img": "https://ftp.goit.study/img/flowers/.png",
-      "title": "",
-      "desc": "",
-      "price": "",
-      "category": "standart"
-    },
-    {
       "img": "https://ftp.goit.study/img/flowers/68498236a1003120877.png",
       "title": "Coral Reef",
       "desc": "Dive into a vivid palette of electric blue delphiniums, vibrant orange ranunculus, and textured anemones—an undersea-inspired bouquet radiating energy, movement, and brilliant color contrasts.",
@@ -775,6 +762,28 @@
       "desc": "Delicate pale anemones mingle with fragrant sprigs of rosemary, thyme, and lavender in this poetic bouquet—evoking nostalgia and the gentle elegance of an herb-scented garden.",
       "price": "73",
       "category": "standart"
+    }
+  ],
+  "reviews": [
+    {
+      "text": "Flora made my anniversary unforgettable with their beautiful arrangement!",
+      "author": "Emma T."
+    },
+    {
+      "text": "Absolutely stunning bouquet! It looked even better than the photo and arrived right on time.",
+      "author": "Daniel R."
+    },
+    {
+      "text": "The service was exceptional, and the flowers were fresh!",
+      "author": "Olivia M."
+    },
+    {
+      "text": "Highly recommend! The centerpieces for our event were gorgeous and lasted for over a week.",
+      "author": "Liam K."
+    },
+    {
+      "text": "Wonderful customer service and a truly unique selection of flowers. I will definitely order again!",
+      "author": "Sophia J."
     }
   ]
 }

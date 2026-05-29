@@ -20,7 +20,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
   </head>
   <body>
     <!-- #region Header -->
@@ -107,7 +108,7 @@
       <section id="bestsellers" class="section-wrapper bestsellers-section" data-aos="fade-right">
         <div class="container">
           <h2 class="section-title bestsellers-section-title">Top-Selling Bouquets</h2>
-          <ul class="bestsellers-list">
+          <!-- <ul class="bestsellers-list">
             <li class="bestsellers-list-item">
               <picture
                 ><source
@@ -203,6 +204,45 @@
                   <use href="./icons/sprite.svg#right-arrow-alt"></use>
                 </svg>
               </button>
+            </div>
+          </div> -->
+          <div class="bestsellers-slider-layout">
+            <div class="bestsellers-slider-viewport" aria-busy="true">
+              <div
+                id="bestsellers-loader"
+                class="content-loader content-loader--bestsellers"
+                role="status"
+                aria-live="polite"
+                aria-label="Loading bestsellers"
+              >
+                <span class="content-loader__spinner" aria-hidden="true"> </span>
+              </div>
+              <div id="bestsellers-slider-stage" class="bestsellers-slider-stage swiper" aria-live="polite">
+                <ul class="swiper-wrapper bestsellers-slider-list" id="bestsellers-slider-list"></ul>
+              </div>
+            </div>
+            <div class="bestsellers-navigation-block">
+              <div class="bestsellers-pagination-container">
+                <div id="bestsellers-pagination" class="bestsellers-pagination swiper-pagination"></div>
+              </div>
+              <div class="bestsellers-slider-buttons">
+                <button
+                  type="button"
+                  class="bestsellers-pagination-button"
+                  data-bestsellers-prev
+                  aria-label="Previous bestseller item"
+                >
+                  <svg class="primary-icon"><use href="./icons/sprite.svg#left-arrow-alt"></use></svg>
+                </button>
+                <button
+                  type="button"
+                  class="bestsellers-pagination-button"
+                  data-bestsellers-next
+                  aria-label="Next bestseller item"
+                >
+                  <svg class="primary-icon"><use href="./icons/sprite.svg#right-arrow-alt"></use></svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -426,7 +466,7 @@
       <section id="feedback" class="section-wrapper feedback-section" data-aos="fade-right">
         <div class="container">
           <h2 class="section-title feedback-section-title">What our clients says</h2>
-          <ul class="feedback-list">
+          <!-- <ul class="feedback-list">
             <li class="feedback-item">
               <p class="text feedback-text">
                 "Flora made my anniversary unforgettable with their beautiful arrangement!"
@@ -455,6 +495,35 @@
                 <use href="./icons/sprite.svg#right-arrow-alt"></use>
               </svg>
             </button>
+          </div> -->
+          <div class="feedback-slider-layout">
+            <div id="feedback-slider-viewport" class="feedback-slider-viewport" aria-busy="true">
+              <div
+                id="feedback-loader"
+                class="content-loader content-loader__feedback"
+                role="status"
+                aria-live="polite"
+                aria-label="Завантаження відгуків"
+              >
+                <span class="content-loader__spinner" aria-hidden="true"> </span>
+              </div>
+              <div id="feedback-slider-stage" class="feedback-slider-stage swiper" aria-live="polite">
+                <ul class="swiper-wrapper feedback-slider-list" id="feedback-slider-list"></ul>
+              </div>
+            </div>
+            <div class="feedback-navigation-block">
+              <button
+                type="button"
+                class="feedback-pagination-button"
+                data-feedback-prev
+                aria-label="Попередній відгук"
+              >
+                <svg class="primary-icon"><use href="./icons/sprite.svg#left-arrow-alt"></use></svg>
+              </button>
+              <button type="button" class="feedback-pagination-button" data-feedback-next aria-label="Наступний відгук">
+                <svg class="primary-icon"><use href="./icons/sprite.svg#right-arrow-alt"></use></svg>
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -622,13 +691,14 @@
                 />
               </div>
               <div class="input-block">
-                <label class="order-form-label" for="address">Address</label>
+                <label class="order-form-label" for="address">Address*</label>
                 <input
                   class="order-form-input"
                   type="text"
                   name="address"
                   id="address"
                   placeholder="456 Floral Ave, Sydney NSW 2000 AU"
+                  required
                 />
               </div>
               <div class="input-block">
@@ -651,6 +721,8 @@
     <script type="module" src="/js/modal.js"></script>
     <script type="module" src="/js/catalogue.js"></script>
     <script type="module" src="/js/notifications.js"></script>
+    <script type="module" src="/js/feedback-slider.js"></script>
+    <script type="module" src="/js/bestsellers-slider.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({ once: true });

@@ -1,4 +1,5 @@
 const catalogueList = document.getElementById("catalogue-list");
+const bestsellersSlider = document.getElementById("bestsellers-slider-list");
 const detailModal = document.getElementById("detail-modal");
 const closeDetailButton = document.getElementById("close-detail-modal-button");
 const detailModalContent = document.getElementById("detail-modal-content");
@@ -94,6 +95,31 @@ function openDetailModalFromCatalogueItem(parentItem) {
   openDetailModal();
 }
 
+function openDetailModalFromBestsellersItem(parentItem) {
+  const imgElement = parentItem.querySelector(".bestsellers-item-image");
+  const src = imgElement.getAttribute("src");
+  const rawSrcset = imgElement.getAttribute("srcset");
+  const title = parentItem.querySelector(".bestsellers-item-title").textContent;
+  const descriptionFromCard = parentItem.querySelector(".bestsellers-item-text").textContent;
+  const price = parentItem.querySelector(".bestsellers-item-price").textContent;
+
+  detailModalContent.replaceChildren();
+  detailModalContent.insertAdjacentHTML("beforeend", buildDetailModalMarkup());
+
+  const detailImage = detailModalContent.querySelector(".detail-modal-image");
+  detailImage.src = src;
+  if (rawSrcset) {
+    detailImage.setAttribute("srcset", rawSrcset);
+  }
+  detailImage.alt = title;
+
+  detailModalContent.querySelector(".detail-modal-title").textContent = title;
+  detailModalContent.querySelector(".detail-modal-text").textContent = descriptionFromCard;
+  detailModalContent.querySelector(".detail-modal-price").textContent = price;
+
+  openDetailModal();
+}
+
 catalogueList?.addEventListener("click", (event) => {
   const parentItem = event.target.closest(".catalogue-list-item");
   if (!parentItem) {
@@ -103,12 +129,22 @@ catalogueList?.addEventListener("click", (event) => {
   openDetailModalFromCatalogueItem(parentItem);
 });
 
+bestsellersSlider?.addEventListener("click", (event) => {
+  const parentItem = event.target.closest(".bestsellers-list-item");
+  if (!parentItem) {
+    return;
+  }
+
+  openDetailModalFromBestsellersItem(parentItem);
+});
+
 closeDetailButton.addEventListener("click", () => {
   closeDetailModal();
 });
 
 closeOrderButton.addEventListener("click", () => {
   closeOrderModal();
+  openDetailModal();
 });
 
 detailModal.addEventListener("click", (e) => {

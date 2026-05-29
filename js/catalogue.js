@@ -1,5 +1,6 @@
 import { apiClient } from "./apiClient.js";
 import { showErrorNotification } from "./notifications.js";
+import { formatPriceUsd, extractErrorMessage } from "./utils.js";
 
 const showMoreButtonDefaultLabel = "Show more";
 const loadingLabel = "Loading...";
@@ -9,21 +10,10 @@ const catalogueListShell = document.querySelector(".catalogue-list-shell");
 const catalogueLoader = document.getElementById("catalogue-loader");
 const showMoreButton = document.querySelector(".catalogue-item-show-more-button");
 
-function formatPriceUah(priceDigits) {
-  if (!priceDigits) {
-    return "-";
-  }
-  const numericValue = Number.parseInt(String(priceDigits).replace(/\s/g, ""), 10);
-  if (Number.isNaN(numericValue)) {
-    return `${priceDigits} грн`;
-  }
-  return `${numericValue.toLocaleString("uk-UA")} грн`;
-}
-
 function buildCatalogueListItemShellMarkup() {
   const markup = `
     <li class="catalogue-list-item">
-      <img class="catalogue-item-image" alt="">
+      <img loading="lazy" class="catalogue-item-image" alt="">
       <h3 class="catalogue-item-title"></h3>
       <p class="catalogue-item-text"></p>
       <p class="catalogue-item-price"></p>
@@ -37,7 +27,7 @@ function fillCatalogueListItem(listItem, product) {
   image.alt = product.title;
   listItem.querySelector(".catalogue-item-title").textContent = product.title;
   listItem.querySelector(".catalogue-item-text").textContent = product.desc;
-  listItem.querySelector(".catalogue-item-price").textContent = formatPriceUah(product.price);
+  listItem.querySelector(".catalogue-item-price").textContent = formatPriceUsd(product.price);
 }
 
 function setCatalogueInitialLoading(isLoading) {
@@ -65,17 +55,6 @@ function renderCatalogueChunk(products, shouldReplaceList) {
   for (let i = 0; i < products.length; i += 1) {
     fillCatalogueListItem(listItems[startIndex + i], products[i]);
   }
-}
-
-function extractErrorMessage(error) {
-  const serverMessage = error.response?.data?.error;
-  if (typeof serverMessage === "string") {
-    return serverMessage;
-  }
-  if (error.message) {
-    return error.message;
-  }
-  return "An Error has occured during your request. Try later.";
 }
 
 function normalizeJsonServerProductPage(responseBody, requestedPage) {
