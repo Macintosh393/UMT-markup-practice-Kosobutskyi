@@ -2,7 +2,7 @@ import { apiClient } from "./apiClient.js";
 import { showErrorNotification } from "./notifications.js";
 import { formatPriceUsd, extractErrorMessage } from "./utils.js";
 
-const itemsPerPage = 12;
+const itemsPerPage = 8;
 const showMoreButtonDefaultLabel = "Load more";
 const showMoreButtonLoadingLabel = "Loading...";
 
