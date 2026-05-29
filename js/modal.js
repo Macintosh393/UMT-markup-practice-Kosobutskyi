@@ -156,6 +156,7 @@ detailModal.addEventListener("click", (e) => {
 orderModal.addEventListener("click", (e) => {
   if (e.target === e.currentTarget) {
     closeOrderModal();
+    openDetailModal();
   }
 });
 
